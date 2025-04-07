@@ -1,0 +1,17 @@
+{
+  "name": "latihan-vite",
+  "version": "1.0.0",
+  "description": "Latihan Belajar Vite",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vite"
+  ],
+  "author": "z-alamsyah",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^6.2.5"
+  }
+}

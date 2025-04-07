@@ -1,0 +1,11 @@
+{
+  "name": "aws-lambda",
+  "version": "1.0.0",
+  "description": "This project using Workarround with AWS Lambda Locally",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "z-alamsyah",
+  "license": "ISC"
+}
