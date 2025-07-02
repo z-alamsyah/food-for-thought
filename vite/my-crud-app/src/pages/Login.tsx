@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from "react";
 import supabase from "../utils/supabase";
 import { alertError } from "../utils/alert";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useLocalStorage } from "react-use";
 import type { UserResponseDTO } from "../dtos/user.response.dto";
 
@@ -25,15 +25,12 @@ export default function Login() {
         return;
       } 
       const userData: UserResponseDTO = Object.assign(data);
-      console.log(data);
-      console.log(userData);
-      console.log('Login successfully', userData.session.access_token);
-      navigate('/home');
       setToken(userData.session.access_token);
+      navigate('/home');
   };
 
   return (
-    <>s
+    <>
        <div>
           <main className="mt-0 transition-all duration-200 ease-in-out">
           <section>
@@ -62,7 +59,7 @@ export default function Login() {
                         </form>
                       </div>
                       <div className="border-black/12.5 rounded-b-2xl border-t-0 border-solid p-6 text-center pt-0 px-1 sm:px-6">
-                        <p className="mx-auto mb-6 leading-normal text-sm">Don't have an account? <a href="../pages/sign-up.html" className="font-semibold text-transparent bg-clip-text bg-gradient-to-tl from-blue-500 to-violet-500">Sign up</a></p>
+                        <p className="mx-auto mb-6 leading-normal text-sm">Don't have an account? <Link to="/register" className="font-semibold text-transparent bg-clip-text bg-gradient-to-tl from-blue-500 to-violet-500">Sign up</Link></p>
                       </div>
                     </div>
                   </div>
