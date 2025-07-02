@@ -3,11 +3,13 @@ import supabase from "../utils/supabase";
 import { alertError } from "../utils/alert";
 import { useNavigate } from "react-router-dom";
 import { useLocalStorage } from "react-use";
+import type { UserResponseDTO } from "../dtos/user.response.dto";
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
    const navigate = useNavigate();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, setToken] = useLocalStorage("token", "");
   
   const handleSubmit = async (e: FormEvent) => {
@@ -21,11 +23,13 @@ export default function Login() {
       if (error) {
         alertError(error.message); 
         return;
-      }
-
-      console.log('Login successfully', data);
+      } 
+      const userData: UserResponseDTO = Object.assign(data);
+      console.log(data);
+      console.log(userData);
+      console.log('Login successfully', userData.session.access_token);
       navigate('/home');
-      setToken(data.access_token);
+      setToken(userData.session.access_token);
   };
 
   return (
