@@ -4,8 +4,8 @@ const storage = new CloudStorage();
 
 
 // upload images
-const objFile = await storage.uploadFile('dart.jpeg', 'my-image', 'images');
-const signURL = await storage.getSignedUrl(objFile, 120);
+// const objFile = await storage.uploadFile('profile.jpeg', 'my-image', 'images');
+const signURL = await storage.getSignedUrl('images/my-image-2025-05-06T02:11:40.976Z', 60);
 
 
 //For Access signURL, you can use <img src="" />

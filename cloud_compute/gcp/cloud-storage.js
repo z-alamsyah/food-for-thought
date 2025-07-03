@@ -2,7 +2,7 @@ import { Storage } from "@google-cloud/storage";
 
 export default class CloudStorage {
   // The ID of your GCS bucket
-  bucketName = "my-bucket-1357";
+  bucketName = "my-private-bucket-123";
   //initialize storage
   storage = Storage;
 
